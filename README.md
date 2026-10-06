@@ -4,4 +4,4 @@
 Contains projects from homeworks and labs
 
 
-![We_Love_DD](images/We_love_DD.png)
+![We_Love_DD](images/We_love_DD_2.png)
