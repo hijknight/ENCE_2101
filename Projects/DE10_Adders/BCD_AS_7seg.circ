@@ -1841,6 +1841,14 @@
     <a name="downloadFrequency" val="64.0"/>
     <a name="simulationFrequency" val="1.0"/>
     <boardmap boardname="DE10LITE">
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
       <mc key="/Carry" pmap="244_307_7,u,u,u"/>
       <mc key="/Input_bus" pmap="551_322_0,529_322_0,507_322_0,485_322_0,420_322_0,399_322_0,377_322_0,355_322_0"/>
       <mc key="/Key1" map="536,229"/>
@@ -1881,6 +1889,7 @@
     </comp>
     <comp lib="0" loc="(260,210)" name="Pin">
       <a name="appearance" val="NewPins"/>
+      <a name="label" val="Input_1"/>
     </comp>
     <comp lib="0" loc="(280,950)" name="Tunnel">
       <a name="facing" val="north"/>
@@ -1994,17 +2003,31 @@
     <comp lib="10" loc="(750,850)" name="BCD_to_7_Segment_decoder"/>
     <comp lib="10" loc="(820,850)" name="BCD_to_7_Segment_decoder"/>
     <comp lib="10" loc="(890,850)" name="BCD_to_7_Segment_decoder"/>
-    <comp lib="6" loc="(270,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(340,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(530,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(600,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(750,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(820,850)" name="7-Segment Display"/>
-    <comp lib="6" loc="(890,850)" name="7-Segment Display"/>
-    <comp lib="9" loc="(447,881)" name="Text">
+    <comp lib="6" loc="(270,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_1"/>
+    </comp>
+    <comp lib="6" loc="(340,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_2"/>
+    </comp>
+    <comp lib="6" loc="(530,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_3"/>
+    </comp>
+    <comp lib="6" loc="(600,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_4"/>
+    </comp>
+    <comp lib="6" loc="(750,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_5"/>
+    </comp>
+    <comp lib="6" loc="(820,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_6"/>
+    </comp>
+    <comp lib="6" loc="(890,850)" name="7-Segment Display">
+      <a name="label" val="L_7_Segment_Display_7"/>
+    </comp>
+    <comp lib="9" loc="(445,880)" name="Text">
       <a name="text" val="+"/>
     </comp>
-    <comp lib="9" loc="(690,883)" name="Text">
+    <comp lib="9" loc="(690,880)" name="Text">
       <a name="text" val="="/>
     </comp>
     <comp loc="(1110,130)" name="sev_segment_decoder">
