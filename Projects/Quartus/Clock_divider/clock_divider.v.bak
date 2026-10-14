@@ -1,0 +1,25 @@
+module clock_divider (
+	input Clk,
+	input Reset,
+	
+	output reg [3: 0] led,
+);
+
+	parameter CLK_DIVIDER = 25000000; // 25,000,000 is the clock divider value for one count every half second
+	reg [24: 0] count; // 2^24 > 25000000
+	
+	always @ (posedge Clk or posedge Reset) begin
+		if (Reset) begin
+			count <= 0;
+			led <= 0;
+		end else begin
+			if (count == CLK_DIVIDER) begin
+				led <= led + 1;
+				count <= 0;
+			end else begin
+				count <= count + 1;
+			end
+		end
+	end
+	
+endmodule

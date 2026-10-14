@@ -1,0 +1,10 @@
+module main(
+
+	input   [0:9]   SW,
+	output  [0:9]   LEDR
+
+);
+
+	assign LEDR[9:0] = SW[9:0];
+	
+endmodule

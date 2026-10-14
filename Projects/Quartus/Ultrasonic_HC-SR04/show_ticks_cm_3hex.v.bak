@@ -1,0 +1,47 @@
+
+`default_nettype none
+
+module show_ticks_cm_3hex 
+# (
+	parameter LEADING_BLANK =1
+)
+(
+	input Clk,
+	input rst_n,
+	input sample,
+	input [20: 0] ticks_20ns;
+	
+	output reg [6: 0] HEX2, // hundreds
+	output reg [6: 0] HEX1, // tens 
+	output reg [6: 0] HEX0 // ones
+	
+);
+
+	reg [20: 0] ticks_q;
+	
+	always @ (posedge Clk or negedge rst_n) begin
+		if (!rst_n) begin
+			ticks_q <= 21'd0;
+		end else if (sample) begin
+			ticks_q <= ticks_20ns;
+		end
+	end
+	
+	function [9: 0] ticks_to_cm10;
+		input [20: 0] t;
+		reg [47:0] p;
+		begin
+			p = (t * 16'd46282) + 48'd67108864; // + 2 ^ 26
+			ticks_to_cm10 = p [47:27];
+		end
+	endfunction
+	
+	wire [9:0] cm_raw = ticks_to_cm10(ticks_q);
+	
+	// clamp to claimed range
+	wire [9:0] cm_clamped = (cm_raw > 10'd400) ? 10'd400 : cm_raw;
+	
+	
+	// binary (0..999) to BCD (hund, tens, ones)
+	
+	// cont here

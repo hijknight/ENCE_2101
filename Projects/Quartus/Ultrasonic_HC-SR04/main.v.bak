@@ -1,0 +1,19 @@
+module main (
+	input MAX10_CLK1_50,
+	input KEY0,
+	
+	output reg [6:0] HEX0,
+	output reg [6:0] HEX1,
+	output reg [6:0] HEX2
+);
+	
+	wire cycle_out;
+	wire ARDUINO_IO11;
+	
+	
+	trigger_generator triggers (
+		.Clock (MAX10_CLK1_50),
+		.Resetn (~KEY0),
+		.cycle_out (cycle_out),
+		.trig_out (ARDUINO_IO11)
+	);

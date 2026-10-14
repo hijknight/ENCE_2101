@@ -1,0 +1,34 @@
+module upCount (
+    input MAX10_CLK1_50,
+    input [9:0] SW,
+    input [9:0] LEDR
+
+);
+
+    wire Clock;
+    wire Resetn;
+
+    assign Clock = MAX10_CLK1_50;
+    assign Resetn = SW[0];
+
+
+    reg [25:0] Q;
+
+    always @(posedge Clock or negedge Resetn) begin
+        if (!Resetn) begin
+            Q <= 0;
+        end
+        else begin
+            Q <= Q + 1;
+        end
+    end
+
+    assign LEDR[0] = Q[25];
+    
+endmodule
+
+
+
+
+
+
