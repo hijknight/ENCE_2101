@@ -1,0 +1,30 @@
+module main (
+	input MAX10_CLK1_50,
+	input KEY0,
+	
+	inout [7:0] ARDUINO_IO,
+	
+	output [9:0] LEDR
+);
+
+	wire key_valid;
+	wire [3:0] key;
+	keypad_scanner scanner (
+		.Clk (MAX10_CLK1_50),
+		.Resetn (KEY0),
+		.cols (ARDUINO_IO[3:0]),
+		
+		.rows (ARDUINO_IO[7:4]),
+		.key (key),
+		.key_valid (key_valid)
+	);
+	
+	always @(posedge MAX10_CLK1_50 or negedge KEY0) begin
+		if (!KEY0) begin
+			LEDR <= 10'd0;
+		end else if (key_valid) begin
+			LEDR <= LEDR + 10'd1;
+		end
+	end
+	
+endmodule

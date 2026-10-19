@@ -1,0 +1,7 @@
+
+State Machine - |main|keypad_scanner:scanner|state
+Name state.RELEASE state.HELD state.DEBOUNCE state.IDLE 
+state.IDLE 0 0 0 0 
+state.DEBOUNCE 0 0 1 1 
+state.HELD 0 1 0 1 
+state.RELEASE 1 0 0 1 
