@@ -20,7 +20,9 @@ Instead of using 3 seconds as the trigger for changing state, I changed the trig
 ### Designing the MUX
 ![DesigningMUX](images/DesigningMUX.png)
 ### Final Implementation
-![FSM_logisim](images/FSM.png)
+
+![FSM_logisim](images/FSM_logisim.png)
+
 ## Connecting Everything else
 
 ![GIF_Traffic_Light](images/TrafficLight.gif)
