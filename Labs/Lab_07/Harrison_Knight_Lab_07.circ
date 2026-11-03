@@ -74,10 +74,12 @@
     <a name="downloadBoard" val="DE10LITE"/>
     <a name="simulationFrequency" val="2.0"/>
     <boardmap boardname="DE10LITE">
-      <mc key="/DIR" map="551,322"/>
-      <mc key="/L_7_Segment_Display_3" map="282,306"/>
-      <mc key="/L_7_Segment_Display_4" map="318,306"/>
-      <mc key="/RST" map="355,322"/>
+      <mc key="/L_7_Segment_Display_1" map="282,306"/>
+      <mc key="/L_7_Segment_Display_2" map="318,306"/>
+      <mc key="/REd" pmap="550_307_0,u,u"/>
+      <mc key="/en" map="551,322"/>
+      <mc key="/gree" pmap="u,506_307_0,u"/>
+      <mc key="/yell" pmap="u,528_307_0,u"/>
     </boardmap>
     <comp lib="0" loc="(1020,310)" name="Splitter">
       <a name="facing" val="north"/>
@@ -177,19 +179,24 @@
       <a name="size" val="30"/>
     </comp>
     <comp lib="6" loc="(600,140)" name="RGBLED">
+      <a name="label" val="REd"/>
       <a name="labelcolor" val="#ff0000"/>
     </comp>
     <comp lib="6" loc="(600,180)" name="RGBLED">
+      <a name="label" val="yell"/>
       <a name="labelcolor" val="#ff0000"/>
     </comp>
     <comp lib="6" loc="(600,220)" name="RGBLED">
+      <a name="label" val="gree"/>
       <a name="labelcolor" val="#ff0000"/>
     </comp>
     <comp lib="6" loc="(860,150)" name="7-Segment Display">
       <a name="active" val="false"/>
+      <a name="label" val="L_7_Segment_Display_1"/>
     </comp>
     <comp lib="6" loc="(960,150)" name="7-Segment Display">
       <a name="active" val="false"/>
+      <a name="label" val="L_7_Segment_Display_2"/>
     </comp>
     <comp lib="9" loc="(590,105)" name="Text">
       <a name="font" val="SansSerif bold 22"/>
@@ -202,9 +209,15 @@
     <comp loc="(1130,410)" name="Bin2Hex">
       <a name="label" val="Bin2Hex_1"/>
     </comp>
-    <comp loc="(680,280)" name="FSM"/>
-    <comp loc="(810,460)" name="DownCounter_v1"/>
-    <comp loc="(830,560)" name="pedestrian_button"/>
+    <comp loc="(680,280)" name="FSM">
+      <a name="label" val="FSM_1"/>
+    </comp>
+    <comp loc="(810,460)" name="DownCounter_v1">
+      <a name="label" val="DownCounter_v1_1"/>
+    </comp>
+    <comp loc="(830,560)" name="pedestrian_button">
+      <a name="label" val="pedestrian_button_1"/>
+    </comp>
     <wire from="(1000,140)" to="(1000,290)"/>
     <wire from="(1010,130)" to="(1010,290)"/>
     <wire from="(1020,310)" to="(1020,320)"/>

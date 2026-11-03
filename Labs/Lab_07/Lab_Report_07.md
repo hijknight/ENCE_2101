@@ -26,3 +26,7 @@ Instead of using 3 seconds as the trigger for changing state, I changed the trig
 ## Connecting Everything else
 
 ![GIF_Traffic_Light](images/TrafficLight.gif)
+
+## Deploying to FPGA
+
+![GIF_FPGA](images/FPGA_deplopy.gif)
