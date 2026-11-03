@@ -16,9 +16,11 @@ I needed to add numbering for each state, which will be held by a state register
 Instead of using 3 seconds as the trigger for changing state, I changed the trigger to en == 1 && nState == 1. This allows the timing to be handled by a different module, like the counter.
 
 ## Implementing the State Machine in Logisim
+
+### Designing the MUX
+![DesigningMUX](images/DesigningMUX.png)
+### Final Implementation
 ![FSM_logisim](images/FSM_logisim.png)
-
-
 ## Connecting Everything else
 
 ![GIF_Traffic_Light](images/TrafficLight.gif)
