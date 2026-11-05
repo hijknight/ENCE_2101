@@ -30,3 +30,12 @@ At first, I thought that we could take the simple FSM from lab 7, duplicate it, 
 <img src="images/FSM_twolights.png" width="300">
 </div>
 
+#### Designing this FSM in logisim:
+
+I took a very similar approach to the construction of this FSM as we did during lab 7. I used a multiplexer for each of the 4 states, a state register, and inverters and AND gates to get 4 state outputs (RG, RY, GR, YR).
+
+<div align="center">
+<img src="images/FSM_1_logisim.png" width="400">
+</div>
+
+Later, we can use this same logic with a 4x1 MUX to add the pedestrian button states.
