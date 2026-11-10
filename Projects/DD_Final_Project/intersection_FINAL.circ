@@ -72,6 +72,19 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="downloadBoard" val="DE10LITE"/>
     <a name="simulationFrequency" val="2.0"/>
+    <boardmap boardname="DE10LITE">
+      <mc key="/GA" pmap="u,333_72_0,u"/>
+      <mc key="/GB" pmap="u,411_72_0,u"/>
+      <mc key="/L_7_Segment_Display_1" map="282,306"/>
+      <mc key="/L_7_Segment_Display_2" map="318,306"/>
+      <mc key="/Ped" map="538,263"/>
+      <mc key="/RA" pmap="309_72_0,u,u"/>
+      <mc key="/RB" pmap="388_72_0,u,u"/>
+      <mc key="/RST" map="536,229"/>
+      <mc key="/YA" pmap="322_72_0,u,u"/>
+      <mc key="/YB" pmap="400_72_0,u,u"/>
+      <mc key="/en" map="551,322"/>
+    </boardmap>
     <comp lib="0" loc="(1000,330)" name="Tunnel">
       <a name="label" val="YA"/>
     </comp>
@@ -181,14 +194,30 @@
       <a name="active" val="false"/>
       <a name="label" val="L_7_Segment_Display_2"/>
     </comp>
-    <comp lib="6" loc="(470,560)" name="Button"/>
-    <comp lib="6" loc="(530,540)" name="Button"/>
-    <comp lib="6" loc="(560,130)" name="RGBLED"/>
-    <comp lib="6" loc="(560,170)" name="RGBLED"/>
-    <comp lib="6" loc="(560,90)" name="RGBLED"/>
-    <comp lib="6" loc="(840,130)" name="RGBLED"/>
-    <comp lib="6" loc="(840,170)" name="RGBLED"/>
-    <comp lib="6" loc="(840,90)" name="RGBLED"/>
+    <comp lib="6" loc="(470,560)" name="Button">
+      <a name="label" val="Ped"/>
+    </comp>
+    <comp lib="6" loc="(530,540)" name="Button">
+      <a name="label" val="RST"/>
+    </comp>
+    <comp lib="6" loc="(560,130)" name="RGBLED">
+      <a name="label" val="YA"/>
+    </comp>
+    <comp lib="6" loc="(560,170)" name="RGBLED">
+      <a name="label" val="GA"/>
+    </comp>
+    <comp lib="6" loc="(560,90)" name="RGBLED">
+      <a name="label" val="RA"/>
+    </comp>
+    <comp lib="6" loc="(840,130)" name="RGBLED">
+      <a name="label" val="YB"/>
+    </comp>
+    <comp lib="6" loc="(840,170)" name="RGBLED">
+      <a name="label" val="GB"/>
+    </comp>
+    <comp lib="6" loc="(840,90)" name="RGBLED">
+      <a name="label" val="RB"/>
+    </comp>
     <comp lib="9" loc="(1220,100)" name="Text">
       <a name="font" val="SansSerif bold 22"/>
       <a name="text" val="Counter Display"/>
@@ -199,13 +228,21 @@
     <comp lib="9" loc="(835,35)" name="Text">
       <a name="text" val="Traffic Light B"/>
     </comp>
-    <comp loc="(1130,520)" name="DownCounterSel"/>
+    <comp loc="(1130,520)" name="DownCounterSel">
+      <a name="label" val="DownCounterSel_1"/>
+    </comp>
     <comp loc="(1420,400)" name="Bin2Hex">
       <a name="label" val="Bin2Hex_1"/>
     </comp>
-    <comp loc="(640,310)" name="FSM_ped"/>
-    <comp loc="(790,520)" name="PedestrianRequest"/>
-    <comp loc="(930,310)" name="TrafficLightDecoder"/>
+    <comp loc="(640,310)" name="FSM_ped">
+      <a name="label" val="FSM_ped_1"/>
+    </comp>
+    <comp loc="(790,520)" name="PedestrianRequest">
+      <a name="label" val="PedestrianRequest_1"/>
+    </comp>
+    <comp loc="(930,310)" name="TrafficLightDecoder">
+      <a name="label" val="TrafficLightDecoder_1"/>
+    </comp>
     <wire from="(1120,210)" to="(1120,260)"/>
     <wire from="(1120,210)" to="(1180,210)"/>
     <wire from="(1120,260)" to="(1130,260)"/>
