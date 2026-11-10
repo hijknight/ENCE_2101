@@ -38,4 +38,43 @@ I took a very similar approach to the construction of this FSM as we did during 
 <img src="images/FSM_1_logisim.png" width="400">
 </div>
 
-Later, we can use this same logic with a 4x1 MUX to add the pedestrian button states.
+Later, we can use this same logic with a larger MUX to add the pedestrian button states.
+
+## Thinking Through the States Needed
+
+For the full intersection, we need to have the two lights, but also the pedestrian button. For the FSM, we can use the four state used above and then also add to new states: `WALK_A` and `WALK_B`, which will both correspond to two Red-Red states. The difference between them is which light will go green after the ten second walking countdown passes. For example, `WALK_B` might follow Road B's yellow, so road A will go green afterward.
+
+| State  | Binary | Light A | Light B |
+| ------ | ------ | ------- | ------- |
+| RG     | 000    | Red     | Green   |
+| RY     | 001    | Red     | Yellow  |
+| GR     | 010    | Green   | Red     |
+| YR     | 011    | Yellow  | Red     |
+| WALK_B | 100    | Red     | Red     |
+| WALK_A | 101    | Red     | Red     |
+
+I found a nice tool online to makea finite state machine with labels and arrows [here](https://fsm-builder.vercel.app/). Here is a visualization of the state machine I designed following the table above:
+
+
+<div align="center">
+<img src="images/FSM_ped.png" width = 300>
+</div>
+
+We can implement this in logisim with an 8 to 1 3 bit mux, and two 2 to 1 muxes with the pedestrian button as the select bit. 
+
+<div align="center">
+<img src="images/FSM_ped_logisim.png" width = 400>
+</div>
+
+We have not yet added the combinational logic to decode each state into outputs, so lets do that now.
+
+<div align = "center">
+<img src="images/Decoded_FSM_ped.png" width = 400>
+</div>
+
+This is a nice implementation of the FSM. After this I shifted gears and made the below circuit, with is a down counter that can select between counting down from 10 and counting down from 3. This will be useful between FSM states, and it is usable because we dont ever need to count from 10 or 3 simultaneously. 
+
+<div align = "center">
+<img src="images/SelCoutner&apos;.png" width = 500>
+</div>
+

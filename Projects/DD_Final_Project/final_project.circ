@@ -81,6 +81,14 @@
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="downloadBoard" val="DE10LITE"/>
     <a name="simulationFrequency" val="2.0"/>
+    <boardmap boardname="DE10LITE">
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+      <mc/>
+    </boardmap>
     <comp lib="0" loc="(1020,310)" name="Splitter">
       <a name="facing" val="north"/>
       <a name="fanout" val="8"/>
@@ -212,7 +220,9 @@
     <comp loc="(680,280)" name="FSM">
       <a name="label" val="FSM_1"/>
     </comp>
-    <comp loc="(810,460)" name="DownCounter3"/>
+    <comp loc="(810,460)" name="DownCounter3">
+      <a name="label" val="DownCounter3_1"/>
+    </comp>
     <comp loc="(830,560)" name="pedestrian_button">
       <a name="label" val="pedestrian_button_1"/>
     </comp>
