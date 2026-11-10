@@ -116,11 +116,11 @@ We want the circuit to follow this behavior:
 
 | Button | WALK | P |
 | ------ | ---- | - |
-| 0 | 0 | Holds Previous |
+| 0 | 0 | 0 (Reset) |
 | 1 | 0 | 1 |
-| 0 | 0 | 1 |
+| 0 | 0 | 1 (Latch) |
 | 0 | 1 | 0 |
-| 1 | 1 | 0 |
+| 1 | 1 | 0 (Disables Button input while in walk state) |
 
 This isn't necessarily a truth table, but rather a way to organize my thoughts on how the circuit should operate. This is what I came up with:
 
