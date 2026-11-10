@@ -133,3 +133,14 @@ This gives us the correct behavior for latching.
 ## Traffic Light Decoder -- A quick pitstop
 
 I decided earlier that I would not further decode the FSM outputs *inside* of the FSM module than I needed to, so I will need to build a TrafficLightDecoder module that can give the correct outputs the Logisim RGB LEDs we will use to simulate the traffic lights.
+
+This is pretty simple, all we need is some simple combinational logic. Logisim has a cool tool that allows us to input a truth table, if we supply the inputs and outputs. We just have to make sure we keep in mind that the LEDs we are using only have Red, Green, and Blue digital inputs, so for yellow, we will have to make sure to connect the Red and Green inputs in the main module. Here is the truth table:
+
+| State | RA | YA | GA | RB | YB | GB |
+| ----- | -- | -- | -- | -- | -- | -- |
+| RG    |  1 |  0 |  0 |  0 |  0 |  1 |
+| RY    |  1 |  0 |  0 |  0 |  1 |  0 |
+| GR    |  0 |  0 |  1 |  1 |  0 |  0 |
+| YR    |  0 |  1 |  0 |  1 |  0 |  0 |
+| WALK_A|  1 |  0 |  0 |  1 |  0 |  0 |
+| WALK_B|  1 |  0 |  0 |  1 |  0 |  0 |

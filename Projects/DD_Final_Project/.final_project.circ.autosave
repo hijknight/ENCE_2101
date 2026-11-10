@@ -2047,4 +2047,70 @@
     <wire from="(320,120)" to="(320,160)"/>
     <wire from="(320,120)" to="(350,120)"/>
   </circuit>
+  <circuit name="TrafficLightDecoder">
+    <a name="appearance" val="logisim_evolution"/>
+    <a name="circuit" val="TrafficLightDecoder"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="8.0"/>
+    <comp lib="0" loc="(180,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="RG"/>
+    </comp>
+    <comp lib="0" loc="(180,190)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="RY"/>
+    </comp>
+    <comp lib="0" loc="(180,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="GR"/>
+    </comp>
+    <comp lib="0" loc="(180,290)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="GY"/>
+    </comp>
+    <comp lib="0" loc="(180,340)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="WALK_B"/>
+    </comp>
+    <comp lib="0" loc="(180,390)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="WALK_A"/>
+    </comp>
+    <comp lib="0" loc="(550,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="RA"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(550,190)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="YA"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(550,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="GA"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(550,290)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="RB"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(550,340)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="YB"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(550,390)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="GB"/>
+      <a name="type" val="output"/>
+    </comp>
+  </circuit>
 </project>
