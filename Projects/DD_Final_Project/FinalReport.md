@@ -180,6 +180,4 @@ I was happy when I figured out that the decoding of the FSM was much simpler tha
 
 The selectable counter is really cool, and simplifies the main module considerably. I should point out that the selectable counter relies completely on the value of either of the walk states. This allows for a nice transition between standard cycling states and walking states, while taking advantage of the fact that we are only using one maximum value of the counter at a time.
 
-I am proud, also, that I was able to complete this project without the use of AI, and that I was able to use solely what we learned in class.
-
-Thank you, Dr. Goncalo, for this class. I loved being a part of it, and it opened up a whole new world for me in terms of my understanding of hardware and computers. I was inspired enough to go learn (and continuing to learn) Verilog, and do some awesome projects with it. 
+I am proud, also, that I was able to complete this project without the use of AI, and that I was able to use solely what we learned in . I loved being a part of it, and it opened up a whole new world for me in terms of my understanding of hardware and computers. I was inspired enough to go learn (and continuing to learn) Verilog, and do some awesome projects with it. 
