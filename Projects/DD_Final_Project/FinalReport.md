@@ -174,7 +174,7 @@ The "putting together" of this project is pretty self explanatory, so I have sim
 
 ## Project Conclusions and Thoughts
 
-I thought that this project was really interesting. I thoroughly enjoyed working on it. It was really cool to see it come to life in the way that it did. I truly believe that the modular way that I completed this project made the final main module very pretty. Everything has a purpose, and it is simply named enough that one can under what each piece is doing, without having to look terribly far into the submodules. 
+I thought that this project was really interesting. I thoroughly enjoyed working on it. It was really cool to see it come to life in the way that it did. I truly believe that the modular way that I completed this project made the final main module very pretty. Everything has a purpose, and it is simply named enough that one can understand what each piece is doing, without having to look terribly far into the submodules. 
 
 I was happy when I figured out that the decoding of the FSM was much simpler than I expected because of the One-Hot logic of the FSM. When I connected the FSM module to the decoder module, I felt a great feeling of satisfaction. The pedestrian request module's latching logic is seamless, and it even provides the tools for the user to cancel the request if needed, as well as initializing the circuit. Also, it provide the logic to disallow a second walk request being initiated during a current walk state.
 
