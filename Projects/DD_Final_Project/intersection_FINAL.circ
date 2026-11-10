@@ -57,7 +57,9 @@
     </tool>
     <sep/>
     <tool lib="1" name="NOT Gate"/>
-    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="AND Gate">
+      <a name="size" val="30"/>
+    </tool>
     <tool lib="1" name="OR Gate"/>
     <tool lib="1" name="XOR Gate"/>
     <tool lib="1" name="NAND Gate"/>
@@ -194,11 +196,13 @@
       <a name="active" val="false"/>
       <a name="label" val="L_7_Segment_Display_2"/>
     </comp>
+    <comp lib="6" loc="(420,540)" name="Button">
+      <a name="label" val="RST"/>
+      <a name="press" val="passive"/>
+    </comp>
     <comp lib="6" loc="(470,560)" name="Button">
       <a name="label" val="Ped"/>
-    </comp>
-    <comp lib="6" loc="(530,540)" name="Button">
-      <a name="label" val="RST"/>
+      <a name="press" val="passive"/>
     </comp>
     <comp lib="6" loc="(560,130)" name="RGBLED">
       <a name="label" val="YA"/>
@@ -334,10 +338,10 @@
     <wire from="(340,310)" to="(420,310)"/>
     <wire from="(340,610)" to="(820,610)"/>
     <wire from="(370,100)" to="(390,100)"/>
+    <wire from="(420,540)" to="(570,540)"/>
     <wire from="(470,560)" to="(570,560)"/>
     <wire from="(530,130)" to="(550,130)"/>
     <wire from="(530,170)" to="(550,170)"/>
-    <wire from="(530,540)" to="(570,540)"/>
     <wire from="(530,90)" to="(560,90)"/>
     <wire from="(550,110)" to="(550,130)"/>
     <wire from="(550,110)" to="(570,110)"/>
@@ -1471,17 +1475,9 @@
     <a name="circuit" val="PedestrianRequest"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="8.0"/>
-    <comp lib="0" loc="(100,140)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="Rst"/>
-    </comp>
     <comp lib="0" loc="(110,110)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="WALK"/>
-    </comp>
-    <comp lib="0" loc="(110,210)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="label" val="Button"/>
     </comp>
     <comp lib="0" loc="(350,120)" name="Pin">
       <a name="appearance" val="NewPins"/>
@@ -1489,8 +1485,18 @@
       <a name="label" val="P"/>
       <a name="type" val="output"/>
     </comp>
+    <comp lib="0" loc="(70,140)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Rst"/>
+    </comp>
+    <comp lib="0" loc="(90,210)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Button"/>
+    </comp>
+    <comp lib="1" loc="(120,140)" name="NOT Gate"/>
     <comp lib="1" loc="(180,200)" name="AND Gate">
       <a name="negate0" val="true"/>
+      <a name="negate1" val="true"/>
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(210,110)" name="OR Gate">
@@ -1502,14 +1508,12 @@
     <comp lib="1" loc="(290,200)" name="NOR Gate">
       <a name="size" val="30"/>
     </comp>
-    <wire from="(100,140)" to="(160,140)"/>
     <wire from="(110,110)" to="(130,110)"/>
-    <wire from="(110,210)" to="(150,210)"/>
+    <wire from="(120,140)" to="(160,140)"/>
     <wire from="(130,100)" to="(130,110)"/>
     <wire from="(130,100)" to="(180,100)"/>
     <wire from="(130,110)" to="(130,190)"/>
     <wire from="(130,190)" to="(140,190)"/>
-    <wire from="(140,190)" to="(150,190)"/>
     <wire from="(160,120)" to="(160,140)"/>
     <wire from="(160,120)" to="(180,120)"/>
     <wire from="(180,200)" to="(230,200)"/>
@@ -1527,6 +1531,8 @@
     <wire from="(310,140)" to="(310,200)"/>
     <wire from="(320,120)" to="(320,160)"/>
     <wire from="(320,120)" to="(350,120)"/>
+    <wire from="(70,140)" to="(90,140)"/>
+    <wire from="(90,210)" to="(140,210)"/>
   </circuit>
   <circuit name="TrafficLightDecoder">
     <a name="appearance" val="logisim_evolution"/>
