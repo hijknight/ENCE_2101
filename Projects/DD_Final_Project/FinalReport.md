@@ -161,11 +161,24 @@ Quick sidenote, as I was throwing it all together, I noticed that a asynchronous
 
 The "putting together" of this project is pretty self explanatory, so I have simply attached a large screenshot below. I have also embedded a YouTube showing it working on Logisim, and another one showing it working on the DE10 Lite.
 
-[![Logisim](https://youtube.com/fTVm4pY71S0/maxresdefault.jpg)](https://youtu.be/fTVm4pY71S0)
 
-[![DE10_Lite](https://youtube.com/gO2W1lUrZy4/maxresdefault.jpg)](https://youtu.be/gO2W1lUrZy4)
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/fTVm4pY71S0"
+  title="YouTube video player"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
-
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/gO2W1lUrZy4"
+  title="YouTube video player"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 
 <div align="center">
 <img src="images/FinalCircuit.png" width=800>
