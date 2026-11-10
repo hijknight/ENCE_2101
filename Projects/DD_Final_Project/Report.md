@@ -4,7 +4,7 @@
 Our project is to design an intersection that has two traffic lights, and a pedestrian button. We can setup a nicely formatted simulation in logisim, but Dr. Martin provided an html file that acts as a simulation.
 
 <div align="center">
-    <img src="images/Screenshot 2026-11-04 at 9.18.50 AM.png" width="280">
+    <img src="images/TrafficLight.png" width="300">
 </div>
 
 
@@ -60,6 +60,7 @@ I found a nice tool online to makea finite state machine with labels and arrows 
 <img src="images/FSM_ped.png" width = 300>
 </div>
 
+### Logisim FSM for ped button
 We can implement this in logisim with an 8 to 1 3 bit mux, and two 2 to 1 muxes with the pedestrian button as the select bit. 
 
 <div align="center">
@@ -72,9 +73,63 @@ We have not yet added the combinational logic to decode each state into outputs,
 <img src="images/Decoded_FSM_ped.png" width = 400>
 </div>
 
+
+## Counting Logic
 This is a nice implementation of the FSM. After this I shifted gears and made the below circuit, with is a down counter that can select between counting down from 10 and counting down from 3. This will be useful between FSM states, and it is usable because we dont ever need to count from 10 or 3 simultaneously. 
 
 <div align = "center">
-<img src="images/SelCoutner&apos;.png" width = 500>
+<img src="images/SelCounter.png" width = 500>
 </div>
 
+## Latching the Pedestrian Button Request
+
+I realized as I was making the FSM that I would need to find a way to latch the pedestrian button when the following scenario occurs:
+
+1. Road A is green with two seconds remaining. 
+2. Someone presses the pedestrian button for a tenth of a second.
+3. They release the button.
+4. Road A enter the yellow state.
+5. The FSM must enter WALK_A, even the button isn't currently pressed.
+
+We already have the logic in the FSM to handle a stored `P` request, so we dont need to change anything there. Instead, we can implement a new module called PedestrianRequest. It can take three inputs and one output:
+
+| Input / Output | Purpose |
+| ----- | ------- |
+| `Button`| Raw Pedestrian Button |
+| `WALK` | HIGH when a walk state is active |
+| `Clock` | Clock input |
+| `P` | Stored ped request output |
+
+While `WALK = 1`, button presses will be ignored. The latch will be cleared during the pedestrian walking phase, and a button press cannot produce another request directly afterward.
+
+At this point, I realized I was making a mistake. For our project, we will be using a clock divider through logisim's synthesis. If we were writing this in verilog using the MAX10's 50MHz clock directly, we would be able to create multiple clock frequencies with different dividers. Since we only have the one 2Hz clock, we run into an issue when using a D flip-flop and a clock input to store a button press because a button press can be shorter than the period of the clock. So I had to think about another way to do think to do this. I remembered the SR-latch from class, and decided it would be a good option.
+
+Let's change the inputs and outputs so we can have an asynchronous SR-latch.
+
+| Input / Output | Purpose |
+| ----- | ------- |
+| `Button`| Raw Pedestrian Button |
+| `WALK` | HIGH when a walk state is active |
+| `P` | Stored ped request output |
+
+We want the circuit to follow this behavior:
+
+| Button | WALK | P |
+| ------ | ---- | - |
+| 0 | 0 | Holds Previous |
+| 1 | 0 | 1 |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 1 | 0 |
+
+This isn't necessarily a truth table, but rather a way to organize my thoughts on how the circuit should operate. This is what I came up with:
+
+<div align="center">
+<img src="images/gate_latch.png" width=400>
+</div>
+
+This gives us the correct behavior for latching. 
+
+## Traffic Light Decoder -- A quick pitstop
+
+I decided earlier that I would not further decode the FSM outputs *inside* of the FSM module than I needed to, so I will need to build a TrafficLightDecoder module that can give the correct outputs the Logisim RGB LEDs we will use to simulate the traffic lights.
