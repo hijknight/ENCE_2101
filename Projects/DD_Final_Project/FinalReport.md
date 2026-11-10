@@ -161,6 +161,12 @@ Quick sidenote, as I was throwing it all together, I noticed that a asynchronous
 
 The "putting together" of this project is pretty self explanatory, so I have simply attached a large screenshot below. I have also embedded a YouTube showing it working on Logisim, and another one showing it working on the DE10 Lite.
 
+[![Logisim](https://youtube.com/fTVm4pY71S0/maxresdefault.jpg)](https://youtu.be/fTVm4pY71S0)
+
+[![DE10_Lite](https://youtube.com/gO2W1lUrZy4/maxresdefault.jpg)](https://youtu.be/gO2W1lUrZy4)
+
+
+
 <div align="center">
 <img src="images/FinalCircuit.png" width=800>
 </div>
@@ -171,6 +177,8 @@ I thought that this project was really interesting. I thoroughly enjoyed working
 
 I was happy when I figured out that the decoding of the FSM was much simpler than I expected because of the One-Hot logic of the FSM. When I connected the FSM module to the decoder module, I felt a great feeling of satisfaction. The pedestrian request module's latching logic is seamless, and it even provides the tools for the user to cancel the request if needed, as well as initializing the circuit. Also, it provide the logic to disallow a second walk request being initiated during a current walk state.
 
-The selectable counter is really cool, and simplifies the main module considerably. I should point out that the selectable counter relies completely on the value of either of the walk states. This allows for a nice transition between standard cycling states and walking states, while taking advantage of the fact that we are only using one maximum value of the counter at a time. 
+The selectable counter is really cool, and simplifies the main module considerably. I should point out that the selectable counter relies completely on the value of either of the walk states. This allows for a nice transition between standard cycling states and walking states, while taking advantage of the fact that we are only using one maximum value of the counter at a time.
+
+I am proud, also, that I was able to complete this project without the use of AI, and that I was able to use solely what we learned in class.
 
 Thank you, Dr. Goncalo, for this class. I loved being a part of it, and it opened up a whole new world for me in terms of my understanding of hardware and computers. I was inspired enough to go learn (and continuing to learn) Verilog, and do some awesome projects with it. 
