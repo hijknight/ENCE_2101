@@ -144,3 +144,33 @@ This is pretty simple, all we need is some simple combinational logic. Logisim h
 | YR    |  0 |  1 |  0 |  1 |  0 |  0 |
 | WALK_A|  1 |  0 |  0 |  1 |  0 |  0 |
 | WALK_B|  1 |  0 |  0 |  1 |  0 |  0 |
+
+Because the FSM only produce one state at a time, we can just use OR gates. The WALK output can be used later in the main module to select the counters maximum value.
+
+<div align="center">
+<img src="images/TrafficLightDecoder_WALK.png" width=500>
+</div>
+
+## Putting it all together!
+
+Quick sidenote, as I was throwing it all together, I noticed that a asynchronous reset would be helpful for the pedestrian request, so I implemented that:
+
+<div align="center">
+<img src="images/RST.png" width=500>
+</div>
+
+The "putting together" of this project is pretty self explanatory, so I have simply attached a large screenshot below. I have also embedded a YouTube showing it working on Logisim, and another one showing it working on the DE10 Lite.
+
+<div align="center">
+<img src="images/FinalCircuit.png" width=800>
+</div>
+
+## Project Conclusions and Thoughts
+
+I thought that this project was really interesting. I thoroughly enjoyed working on it. It was really cool to see it come to life in the way that it did. I truly believe that the modular way that I completed this project made the final main module very pretty. Everything has a purpose, and it is simply named enough that one can under what each piece is doing, without having to look terribly far into the submodules. 
+
+I was happy when I figured out that the decoding of the FSM was much simpler than I expected because of the One-Hot logic of the FSM. When I connected the FSM module to the decoder module, I felt a great feeling of satisfaction. The pedestrian request module's latching logic is seamless, and it even provides the tools for the user to cancel the request if needed, as well as initializing the circuit. Also, it provide the logic to disallow a second walk request being initiated during a current walk state.
+
+The selectable counter is really cool, and simplifies the main module considerably. I should point out that the selectable counter relies completely on the value of either of the walk states. This allows for a nice transition between standard cycling states and walking states, while taking advantage of the fact that we are only using one maximum value of the counter at a time. 
+
+Thank you, Dr. Goncalo, for this class. I loved being a part of it, and it opened up a whole new world for me in terms of my understanding of hardware and computers. I was inspired enough to go learn (and continuing to learn) Verilog, and do some awesome projects with it. 
