@@ -88,8 +88,8 @@ I realized as I was making the FSM that I would need to find a way to latch the 
 1. Road A is green with two seconds remaining. 
 2. Someone presses the pedestrian button for a tenth of a second.
 3. They release the button.
-4. Road A enter the yellow state.
-5. The FSM must enter WALK_A, even the button isn't currently pressed.
+4. Road A enters the yellow state.
+5. The FSM must enter WALK_A, even when the button isn't currently pressed.
 
 We already have the logic in the FSM to handle a stored `P` request, so we dont need to change anything there. Instead, we can implement a new module called PedestrianRequest. It can take three inputs and one output:
 
